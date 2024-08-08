@@ -1,67 +1,67 @@
 /* Projekt, DT207G Backend-baserad webbutveckling, Åsa Lindskog sali1502@student.miun.se */
 
-/* Routes för smårätter */
+/* Routes för sallad */
 const express = require("express");
 const router = express.Router();
-const Starter = require("../models/Starter");
+const Sallad = require("../models/Sallad");
 
-// Hämta smårätter (alla)
+// Hämta sallad (alla)
 router.get("/", async (req, res) => {
     try {
-        const result = await Starter.find({});
+        const result = await Sallad.find({});
         res.json(result);
     } catch (error) {
         res.status(500).json({ error: "Ett serverfel uppstod: " + error });
     }
 });
 
-// Lägg till smårätter
+// Lägg till sallad
 router.post("/", async (req, res) => {
     try {
-        const result = await Starter.create(req.body);
+        const result = await Sallad.create(req.body);
         res.json(result);
     } catch (error) {
         res.status(400).json({ error: "Ett fel uppstod: " + error });
     }
 });
 
-// Hämta smårätter (med id)
+// Hämta sallad (med id)
 router.get("/:id", async (req, res) => {
     const id = req.params.id;
     try {
-        const starter = await Starter.findById(id);
-        if (!starter) {
-            return res.status(404).json({ message: "Smårätter kunde inte hämtas." });
+        const sallad = await Sallad.findById(id);
+        if (!sallad) {
+            return res.status(404).json({ message: "Sallad kunde inte hämtas." });
         }
-        res.json(starter);
+        res.json(sallad);
     } catch (error) {
         res.status(500).json({ error: "Ett serverfel uppstod: " + error });
     }
 });
 
-// Uppdatera smårätter (med id)
+// Uppdatera sallad (med id)
 router.put("/:id", async (req, res) => {
     const id = req.params.id;
     try {
-        const starter = await Starter.findByIdAndUpdate(id, req.body, { new: true, runValidators: true });
-        if (!starter) {
-            return res.status(404).json({ message: "Smårätter kunde inte uppdateras." });
+        const sallad = await Sallad.findByIdAndUpdate(id, req.body, { new: true, runValidators: true });
+        if (!sallad) {
+            return res.status(404).json({ message: "Sallad kunde inte uppdateras." });
         }
-        res.json(starter);
+        res.json(sallad);
     } catch (error) {
         res.status(500).json({ error: "Ett serverfel uppstod: " + error });
     }
 });
 
-// Radera smårätter (med id)
+// Radera sallad (med id)
 router.delete("/:id", async (req, res) => {
     const id = req.params.id;
     try {
-        const starter = await Starter.findByIdAndDelete(id);
-        if (!starter) {
-            return res.status(404).json({ message: "Smårätter kunde inte raderas." });
+        const sallad = await Sallad.findByIdAndDelete(id);
+        if (!sallad) {
+            return res.status(404).json({ message: "Sallad kunde inte raderas." });
         }
-        res.json(starter);
+        res.json(sallad);
     } catch (error) {
         res.status(500).json({ error: "Ett serverfel uppstod: " + error });
     }

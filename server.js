@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const authRoutes = require("./routes/authRoutes");
 const starterRoutes = require("./routes/starterRoutes");
+const salladRoutes = require("./routes/salladRoutes");
 const jwt = require("jsonwebtoken");
 
 require("dotenv").config();
@@ -46,6 +47,11 @@ function authenticateToken(req, res, next) {
 
 // Route för smårätter
 app.use("/api/starters", starterRoutes);
+
+// Route för sallad
+app.use("/api/sallads", salladRoutes);
+
+
 
 
 // Starta applikationen
