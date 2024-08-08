@@ -8,6 +8,7 @@ const authRoutes = require("./routes/authRoutes");
 const starterRoutes = require("./routes/starterRoutes");
 const salladRoutes = require("./routes/salladRoutes");
 const warmRoutes = require("./routes/warmRoutes");
+const dessertRoutes = require("./routes/dessertRoutes");
 const jwt = require("jsonwebtoken");
 
 require("dotenv").config();
@@ -54,6 +55,9 @@ app.use("/api/sallads", salladRoutes);
 
 // Route för varmrätter
 app.use("/api/warms", warmRoutes);
+
+// Route för dessert
+app.use("/api/desserts", dessertRoutes);
 
 
 
