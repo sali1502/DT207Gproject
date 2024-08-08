@@ -7,6 +7,7 @@ const cors = require("cors");
 const authRoutes = require("./routes/authRoutes");
 const starterRoutes = require("./routes/starterRoutes");
 const salladRoutes = require("./routes/salladRoutes");
+const warmRoutes = require("./routes/warmRoutes");
 const jwt = require("jsonwebtoken");
 
 require("dotenv").config();
@@ -48,8 +49,11 @@ function authenticateToken(req, res, next) {
 // Route för smårätter
 app.use("/api/starters", starterRoutes);
 
-// Route för sallad
+// Route för sallader
 app.use("/api/sallads", salladRoutes);
+
+// Route för varmrätter
+app.use("/api/warms", warmRoutes);
 
 
 
