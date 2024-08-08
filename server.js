@@ -1,11 +1,11 @@
 /* Projekt, DT207G Backend-baserad webbutveckling, Åsa Lindskog sali1502@student.miun.se */
 
-/* Applikation för registrering och inloggning */
-
+/* Webbtjänst med MongoDB och Express samt applikation för registrering och inloggning */
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const authRoutes = require("./routes/authRoutes");
+const starterRoutes = require("./routes/starterRoutes");
 const jwt = require("jsonwebtoken");
 
 require("dotenv").config();
@@ -13,11 +13,13 @@ require("dotenv").config();
 // Initiera Express
 const app = express();
 const port = process.env.PORT || 3000;
+
+// Middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
-// Routes
+/* ROUTES FÖR AUTENTICERING */
 app.use("/api", authRoutes);
 
 // Skyddad route
@@ -39,6 +41,12 @@ function authenticateToken(req, res, next) {
         next();
     });
 }
+
+/* ROUTES FÖR MENY */
+
+// Route för smårätter
+app.use("/api/starters", starterRoutes);
+
 
 // Starta applikationen
 app.listen(port, () => {
