@@ -43,7 +43,17 @@ Kör installations-skriptet install.js. Installations-skriptet skapar en databas
 </table>
 
 ## Användning
-Nedan finns beskrivet hur man kan nå APIet på olika vis:
+Nedan finns beskrivet hur man kan nå APIet på olika vis.<br>
+
+#### Autentisering
+Objekt skickas i JSON-format med följande struktur:<br>
+
+```
+   {
+     "username": "xxx",
+     "password": "xxx"
+   }
+```
 
 <table>
 <tr>
@@ -66,15 +76,26 @@ Nedan finns beskrivet hur man kan nå APIet på olika vis:
   <td>/admin</td>
   <td>Autenticerar användare och skickar vidare till skyddad sida.</td>
 </tr>
+</table><br>
 
-Ett objekt med användaruppgifter skickas som JSON med följande struktur:
+
+#### Meny
+Objekt skickas i JSON-format med följande struktur och ändpunkter:<br>
+
+/starters<br>
+/sallads<br>
+/warms<br>
+/desserts<br>
+/drinks<br>
 
 ```
    {
-     "username": "xxx",
-     "password": "xxx"
+     "name": "Elies",
+     "description": "Stora svarta och gröna oliver",
+      "price": "65"
    }
 ```
+
 <table>
 <tr>
   <th>Metod</th>
@@ -84,32 +105,63 @@ Ett objekt med användaruppgifter skickas som JSON med följande struktur:
  <tr>
   <td>POST</td>
   <td>/starters</td>
-  <td>Lägger till smårätter i en meny.</td>
+  <td>Lägger och lagrar smårätter.</td>
   </tr>
 <tr> 
 <tr>
   <td>GET</td>
   <td>/starters</td>
-  <td>Hämar smårätter i en meny.</td>
+  <td>Hämar smårätter.</td>
 </tr>
   <td>PUT</td>
   <td>/starters</td>
-  <td>Ändrar smårätter i en meny.</td>
+  <td>Ändrar smårätter.</td>
 </tr>
 <tr>
   <td>DELETE</td>
   <td>/starters</td>
-  <td>Raderar smårätter i en meny.</td>
+  <td>Raderar smårätter.</td>
 </tr>
+</table><br>
 
-Ett objekt med användaruppgifter skickas som JSON med följande struktur:
+
+#### Meddelanden
+Objekt skickas i JSON-format med följande struktur:<br>
 
 ```
    {
-     "name": "Elies",
-     "description": "Stora svarta och gröna oliver",
-      "price": "65"
+     "name": "John Doe",
+     "email": "john.doe@email.com",
+     "message": "Hello!",
    }
 ```
+
+<table>
+<tr>
+  <th>Metod</th>
+  <th>Ändpunkt</th>
+  <th>Beskrivning</th>
+</tr>
+ <tr>
+  <td>POST</td>
+  <td>/messages</td>
+  <td>Lägger till och lagrar meddelanden.</td>
+  </tr>
+<tr> 
+<tr>
+  <td>GET</td>
+  <td>/messages</td>
+  <td>Hämtar meddelanden.</td>
+</tr>
+  <td>PUT</td>
+  <td>/messages</td>
+  <td>Ändrar meddelanden.</td>
+</tr>
+<tr>
+  <td>DELETE</td>
+  <td>/messages</td>
+  <td>Raderar meddelanden.</td>
+</tr>
+</table>
 
 
