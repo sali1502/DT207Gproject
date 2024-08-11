@@ -18,23 +18,23 @@ Kör installations-skriptet install.js. Installations-skriptet skapar en databas
 </tr>
 <tr>
   <td>starters</td>
-  <td><strong>id</strong>(ObjectId), <strong>name</strong>(String), <strong>description</strong>(String), <strong>price</strong>(Double).
+  <td><strong>id</strong>(ObjectId), <strong>name</strong>(String), <strong>description</strong>(String), <strong>price</strong>(String).
 </tr>
 <tr>
   <td>sallads</td>
-  <td><strong>id</strong>(ObjectId), <strong>name</strong>(String), <strong>description</strong>(String), <strong>price</strong>(Double).
+  <td><strong>id</strong>(ObjectId), <strong>name</strong>(String), <strong>description</strong>(String), <strong>price</strong>(String).
 </tr>
 <tr>
   <td>warms</td>
-  <td><strong>id</strong>(ObjectId), <strong>name</strong>(String), <strong>description</strong>(String), <strong>price</strong>(Double).
+  <td><strong>id</strong>(ObjectId), <strong>name</strong>(String), <strong>description</strong>(String), <strong>price</strong>(String).
 </tr>
 <tr>
 <td>desserts</td>
-  <td><strong>id</strong>(ObjectId), <strong>name</strong>(String), <strong>description</strong>(String), <strong>price</strong>(Double).
+  <td><strong>id</strong>(ObjectId), <strong>name</strong>(String), <strong>description</strong>(String), <strong>price</strong>(String).
 </tr>
  <tr>
 <td>drinks</td>
-  <td><strong>id</strong>(ObjectId), <strong>name</strong>(String), <strong>description</strong>(String), <strong>price</strong>(Double).
+  <td><strong>id</strong>(ObjectId), <strong>name</strong>(String), <strong>description</strong>(String), <strong>price</strong>(String).
 </tr>
  <tr>
 <td>messages</td>
