@@ -18,23 +18,23 @@ Kör installations-skriptet install.js. Installations-skriptet skapar en databas
 </tr>
 <tr>
   <td>starters</td>
-  <td><strong>id</strong>(ObjectId), <strong>name</strong>(String), <strong>description</strong>(String), <strong>price</strong>(String).
+  <td><strong>id</strong>(ObjectId), <strong>name</strong>(String), <strong>description</strong>(String), <strong>price</strong>(Double).
 </tr>
 <tr>
   <td>sallads</td>
-  <td><strong>id</strong>(ObjectId), <strong>name</strong>(String), <strong>description</strong>(String), <strong>price</strong>(String).
+  <td><strong>id</strong>(ObjectId), <strong>name</strong>(String), <strong>description</strong>(String), <strong>price</strong>(Double).
 </tr>
 <tr>
   <td>warms</td>
-  <td><strong>id</strong>(ObjectId), <strong>name</strong>(String), <strong>description</strong>(String), <strong>price</strong>(String).
+  <td><strong>id</strong>(ObjectId), <strong>name</strong>(String), <strong>description</strong>(String), <strong>price</strong>(Double).
 </tr>
 <tr>
 <td>desserts</td>
-  <td><strong>id</strong>(ObjectId), <strong>name</strong>(String), <strong>description</strong>(String), <strong>price</strong>(String).
+  <td><strong>id</strong>(ObjectId), <strong>name</strong>(String), <strong>description</strong>(String), <strong>price</strong>(Double).
 </tr>
  <tr>
 <td>drinks</td>
-  <td><strong>id</strong>(ObjectId), <strong>name</strong>(String), <strong>description</strong>(String), <strong>price</strong>(String).
+  <td><strong>id</strong>(ObjectId), <strong>name</strong>(String), <strong>description</strong>(String), <strong>price</strong>(Double).
 </tr>
  <tr>
 <td>messages</td>
@@ -105,13 +105,13 @@ Objekt skickas i JSON-format med följande struktur och ändpunkter:<br>
  <tr>
   <td>POST</td>
   <td>/starters</td>
-  <td>Lägger och lagrar smårätter.</td>
+  <td>Lägger till och lagrar smårätter.</td>
   </tr>
 <tr> 
 <tr>
   <td>GET</td>
   <td>/starters</td>
-  <td>Hämar smårätter.</td>
+  <td>Hämtar smårätter.</td>
 </tr>
   <td>PUT</td>
   <td>/starters</td>
@@ -152,10 +152,6 @@ Objekt skickas i JSON-format med följande struktur:<br>
   <td>GET</td>
   <td>/messages</td>
   <td>Hämtar meddelanden.</td>
-</tr>
-  <td>PUT</td>
-  <td>/messages</td>
-  <td>Ändrar meddelanden.</td>
 </tr>
 <tr>
   <td>DELETE</td>
