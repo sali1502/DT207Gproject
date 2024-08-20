@@ -1,6 +1,6 @@
 # Projektuppgift för kursen DT207G Backend-baserad webbutveckling
 
-I detta repository finns kod för ett REST API byggt med Express. APIets syfte är hantera användaruppgifter (användarnamn och lösenord) för inlogg till en skyddad sida. Lösenordet hashas och token skickas med vid inlogg. APIet hanterar även funktion att kunna lägga till, uppdatera och radera mat och dryck i en meny. Vidare finns en meddelandefunktion där meddelanden kan läggas till, uppdateras och raderas.<br>
+I detta repository finns kod för ett REST API byggt med Express. APIets syfte är hantera användaruppgifter (användarnamn och lösenord) för inlogg till en skyddad sida. Lösenordet hashas och token skickas med vid inlogg. APIet hanterar även funktion att kunna lägga till, uppdatera och radera mat och dryck i en meny. Vidare finns en meddelandefunktion där meddelanden kan läggas till, skrivas ut och raderas.<br>
 Funktionalitet för detta skapas med CRUD (Create, Read, Update, Delete).<br>
 
 ## Installation, databas
