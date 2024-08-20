@@ -1,6 +1,6 @@
 /* Projekt, DT207G Backend-baserad webbutveckling, Åsa Lindskog sali1502@student.miun.se */
 
-/* Webbtjänst med MongoDB och Express samt applikation för registrering och inloggning */
+/* Webbtjänst med MongoDB och Express med meny, meddelanden och applikation för registrering och inloggning */
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -25,6 +25,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 /* ROUTES FÖR AUTENTICERING */
+
 app.use("/api", authRoutes);
 
 // Skyddad route
@@ -64,9 +65,10 @@ app.use("/api/desserts", dessertRoutes);
 // Route för dryck
 app.use("/api/drinks", drinkRoutes);
 
+/* ROUTES FÖR MEDDELANDEN */
+
 // Route för meddelande
 app.use("/api/messages", messageRoutes);
-
 
 // Starta applikationen
 app.listen(port, () => {

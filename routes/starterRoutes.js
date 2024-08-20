@@ -1,9 +1,12 @@
 /* Projekt, DT207G Backend-baserad webbutveckling, Åsa Lindskog sali1502@student.miun.se */
 
 /* Routes för smårätter */
-const express = require("express");
+const express = require('express');
 const router = express.Router();
 const Starter = require("../models/Starter");
+
+const app = express();
+app.use(express.json());
 
 // Hämta smårätter (alla)
 router.get("/", async (req, res) => {

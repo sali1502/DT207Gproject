@@ -5,6 +5,9 @@ const express = require("express");
 const router = express.Router();
 const Sallad = require("../models/Sallad");
 
+const app = express();
+app.use(express.json());
+
 // Hämta sallad (alla)
 router.get("/", async (req, res) => {
     try {

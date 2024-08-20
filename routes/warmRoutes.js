@@ -1,9 +1,12 @@
 /* Projekt, DT207G Backend-baserad webbutveckling, Åsa Lindskog sali1502@student.miun.se */
 
-/* Routes för sallad */
+/* Routes för varmrätt */
 const express = require("express");
 const router = express.Router();
 const Warm = require("../models/Warm");
+
+const app = express();
+app.use(express.json());
 
 // Hämta varmrätt (alla)
 router.get("/", async (req, res) => {

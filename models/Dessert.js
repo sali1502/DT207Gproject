@@ -1,5 +1,7 @@
 /* Projekt, DT207G Backend-baserad webbutveckling, Åsa Lindskog sali1502@student.miun.se */
 
+// Schema för desserts - Meny
+
 const mongoose = require("mongoose");
 
 const DessertSchema = new mongoose.Schema({

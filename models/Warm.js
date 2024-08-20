@@ -1,5 +1,8 @@
 /* Projekt, DT207G Backend-baserad webbutveckling, Åsa Lindskog sali1502@student.miun.se */
 
+
+// Schema för varmrätter  - Meny
+
 const mongoose = require("mongoose");
 
 const WarmSchema = new mongoose.Schema({

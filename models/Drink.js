@@ -1,5 +1,7 @@
 /* Projekt, DT207G Backend-baserad webbutveckling, Åsa Lindskog sali1502@student.miun.se */
 
+// Schema för dryck - Meny
+
 const mongoose = require("mongoose");
 
 const DrinkSchema = new mongoose.Schema({

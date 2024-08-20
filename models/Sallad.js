@@ -1,5 +1,7 @@
 /* Projekt, DT207G Backend-baserad webbutveckling, Åsa Lindskog sali1502@student.miun.se */
 
+// Schema för sallad - Meny
+
 const mongoose = require("mongoose");
 
 const SalladSchema = new mongoose.Schema({

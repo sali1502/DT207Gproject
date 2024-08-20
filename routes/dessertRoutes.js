@@ -5,6 +5,9 @@ const express = require("express");
 const router = express.Router();
 const Dessert = require("../models/Dessert");
 
+const app = express();
+app.use(express.json());
+
 // Hämta dessert (alla)
 router.get("/", async (req, res) => {
     try {

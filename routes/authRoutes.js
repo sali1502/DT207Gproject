@@ -13,7 +13,7 @@ mongoose.set("strictQuery", false);
 mongoose.connect(process.env.DATABASE).then(() => {
     console.log("Ansluten till MongoDB");
 }).catch((error) => {
-    console.error("Ett fel uppstod vid anslutning till databas");
+    console.error("Ett fel uppstod vid anslutning till databasen");
 });
 
 // Modell för användare
@@ -26,14 +26,14 @@ router.post("/register", async (req, res) => {
 
         // Validera input
         if (!username || !password) {
-            return res.status(400).json({ error: "Vänligen ange användarnamn och lösenord" });
+            return res.status(400).json({ error: "Vänligen ange användarnamn och lösenord!" });
         }
 
         // Korrekt - spara användare
         const user = new User({ username, password });
         await user.save();
 
-        res.status(201).json({ message: "Användare skapad" });
+        res.status(201).json({ message: "Användare registrerad!" });
     } catch (error) {
         res.status(500).json({ error: "Användaren finns redan, försök igen!" });
     }
@@ -46,25 +46,25 @@ router.post("/login", async (req, res) => {
 
         // Validera input
         if (!username || !password) {
-            return res.status(400).json({ error: "Ange användarnamn och lösenord" });
+            return res.status(400).json({ error: "Vänligen ange användarnamn och lösenord!" });
         }
 
         // Finns användaren?
         const user = await User.findOne({ username });
         if (!user) {
-            return res.status(401).json({ error: "Felaktigt användarnamn och/eller lösenord" });
+            return res.status(401).json({ error: "Fel användarnamn och/eller lösenord" });
         }
 
         // Kolla lösenord
         const isPasswordMatch = await user.comparePassword(password);
         if (!isPasswordMatch) {
-            return res.status(401).json({ error: "Felaktigt användarnamn och/eller lösenord" });
+            return res.status(401).json({ error: "Fel användarnamn och/eller lösenord" });
         } else {
             // Skapa JWT
             const payload = { username: username };
             const token = jwt.sign(payload, process.env.JWT_SECRET_KEY, { expiresIn: '8h' });
             res.status(200).json({
-                message: "Användare inloggad",
+                message: "Användare inloggad!",
                 response: {
                     token: token
                 }

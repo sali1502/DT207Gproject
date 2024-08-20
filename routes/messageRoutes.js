@@ -5,6 +5,9 @@ const express = require("express");
 const router = express.Router();
 const Message = require("../models/Message");
 
+const app = express();
+app.use(express.json());
+
 // Hämta meddelanden (alla)
 router.get("/", async (req, res) => {
     try {

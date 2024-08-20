@@ -5,6 +5,9 @@ const express = require("express");
 const router = express.Router();
 const Drink = require("../models/Drink");
 
+const app = express();
+app.use(express.json());
+
 // Hämta dryck (alla)
 router.get("/", async (req, res) => {
     try {

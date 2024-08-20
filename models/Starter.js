@@ -1,5 +1,7 @@
 /* Projekt, DT207G Backend-baserad webbutveckling, Åsa Lindskog sali1502@student.miun.se */
 
+// Schema för smårätter  - Meny
+
 const mongoose = require("mongoose");
 
 const StarterSchema = new mongoose.Schema({

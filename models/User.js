@@ -1,9 +1,10 @@
 /* Projekt, DT207G Backend-baserad webbutveckling, Åsa Lindskog sali1502@student.miun.se */
 
+// Schema för användare med registrering och login med hashat lösenord
+
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 
-// Schema för användare
 const userSchema = new mongoose.Schema({
     username: {
         type: String,
